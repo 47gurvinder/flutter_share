@@ -29,4 +29,3 @@ def __lldb_init_module(debugger: lldb.SBDebugger, _):
     bp = target.BreakpointCreateByRegex("^NOTIFY_DEBUGGER_ABOUT_RX_PAGES$")
     bp.SetScriptCallbackFunction('{}.handle_new_rx_page'.format(__name__))
     bp.SetAutoContinue(True)
-    print("-- LLDB integration loaded --")
